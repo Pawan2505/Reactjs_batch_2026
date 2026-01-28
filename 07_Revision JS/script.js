@@ -378,3 +378,27 @@
 // [69,36,78,49,78]
 
 // arr2 = arr1
+
+// let arr1 = [69,36,78,49,78];
+
+// let [a,b,c,d,e] = arr1;
+
+// console.log(a);
+
+// let arr1 = [69,36,78,49,78];
+
+// let [a,,,,e] = arr1;
+
+// console.log(a);
+// console.log(e);
+
+
+// let obj1 = {
+//     username:"Pawan Maurya",
+//     age:30,
+// }
+
+// let {username,age} = obj1;
+
+// console.log(username)
+// console.log(age)
