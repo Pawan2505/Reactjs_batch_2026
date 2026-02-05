@@ -21,11 +21,11 @@ const FormApp = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-        <input type="text" placeholder='Username' name='username' value={formData.username} onChange={handleChange} />
-        <input type="email" placeholder='Email' name='email' value={formData.email} onChange={handleChange} />
-        <input type="password" placeholder='Password' value={formData.password} name='password' onChange={handleChange} />
+        <input type="text" placeholder='Username' name='username' value={formData.username} onChange={(e)=>handleChange(e)} />
+        <input type="email" placeholder='Email' name='email' value={formData.email} onChange={(e)=>handleChange(e)} />
+        <input type="password" placeholder='Password' value={formData.password} name='password' onChange={(e)=>handleChange(e)} />
         {/* <input type="file" /> */}
-        <button>Submit</button>
+        <button>Submit</button>``
     </form>
   )
 }
