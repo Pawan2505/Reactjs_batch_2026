@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 
 const FormApp = () => {
 
-    const [formData, setFormData] = useState({username:"",email:"",password:""})
+    const [formData, setFormData] = useState({username:"",email:"",password:"",file:null})
 
     const handleSubmit = (e)=>{
         e.preventDefault();
@@ -11,8 +11,13 @@ const FormApp = () => {
 
     const handleChange = (e)=>{
         // console.log(e.target);
-        const {name, value} = e.target;
-        setFormData({...formData, [name]:value})
+        const {name, value,type,files} = e.target;
+        if(type == "file"){
+            setFormData({...formData, [name]:files[0]})
+        }
+       else{
+         setFormData({...formData, [name]:value})
+       }
     }
 
     // useEffect(()=>{
@@ -24,7 +29,7 @@ const FormApp = () => {
         <input type="text" placeholder='Username' name='username' value={formData.username} onChange={(e)=>handleChange(e)} />
         <input type="email" placeholder='Email' name='email' value={formData.email} onChange={(e)=>handleChange(e)} />
         <input type="password" placeholder='Password' value={formData.password} name='password' onChange={(e)=>handleChange(e)} />
-        {/* <input type="file" /> */}
+        <input type="file" name='file' onChange={(e)=>handleChange(e)} />
         <button>Submit</button>``
     </form>
   )
